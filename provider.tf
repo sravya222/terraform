@@ -11,3 +11,7 @@ terraform {
 provider "aws" {
   region = "eu-central-1"
 }
+provider "aws" {
+  region = "us-west-2" # You can hardcode or use variable
+}
+
