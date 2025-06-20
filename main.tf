@@ -12,9 +12,6 @@ data "aws_ami" "ubuntu" {
     values = ["hvm"]
   }
 }
-provider "aws" {
-  region = "us-west-2"
-}
 
  # Create VPC
 resource "aws_vpc" "main" {
