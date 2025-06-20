@@ -2,11 +2,10 @@ pipeline {
   agent any
   
  environment {
-   % export AWS_ACCESS_KEY_ID="anaccesskey"
-   % export AWS_SECRET_ACCESS_KEY="asecretkey"
-   % export AWS_REGION="us-west-2"
-  % terraform plan
-  }
+        AWS_ACCESS_KEY_ID     = credentials('aws-access-key')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
+        AWS_DEFAULT_REGION    = 'us-west-2'
+     }
     stages {
     stage('Checkout') {
       steps {
