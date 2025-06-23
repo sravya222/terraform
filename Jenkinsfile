@@ -22,7 +22,8 @@ pipeline {
 
     stage('Terraform Validate') {
       steps {
-        sh 'terraform validate'
+                sh(script: 'terraform validate', returnStdout: true)
+
       }
     }
 
