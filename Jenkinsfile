@@ -20,14 +20,7 @@ pipeline {
       }
     }
 
-    stage('Terraform Validate') {
-      steps {
-                sh(script: 'terraform validate', returnStdout: true)
-
-      }
-    }
-
-    stage('Terraform Plan') {
+        stage('Terraform Plan') {
       steps {
         sh 'terraform plan -out= tfplan'
       }
