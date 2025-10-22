@@ -63,7 +63,7 @@ variable "instance_name" {
 variable "bucket_name" {
   description = "The name of the S3 bucket"
   type        = string
-  default = "my-tf-test-bucket-fau"
+  default = "my-tf-test-bucket-faa"
 }
 
 variable "bucket_tag_name" {
