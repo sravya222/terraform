@@ -1,7 +1,7 @@
 # AWS Region
 variable "region" {
   type    = string
-  default = "ap-south-1"
+  default = "ap-south-2"
 }
 
 variable "tags" {
