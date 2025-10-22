@@ -27,7 +27,7 @@ variable "vpc_cidr" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default = ["ap-south-1", "ap-south-2"]
+  default = ["ap-south-2a", "ap-south-2b"]
 }
 
 variable "public_subnets" {
@@ -45,7 +45,7 @@ variable "private_subnets" {
 variable "ami_id" {
   description = "AMI ID for the EC2 instance"
   type        = string
-  default = "ami-02003f9f0fde924ea"
+  default = "ami-0754cb1f9a84f7149"
 }
 
 variable "instance_type" {
@@ -63,7 +63,7 @@ variable "instance_name" {
 variable "bucket_name" {
   description = "The name of the S3 bucket"
   type        = string
-  default = "my-tf-test-bucket-fe"
+  default = "my-tf-test-bucket-fau"
 }
 
 variable "bucket_tag_name" {
@@ -76,63 +76,6 @@ variable "environment" {
   description = "The environment tag for the S3 bucket"
   type        = string
   default     = "Dev"
-}
-
-variable "lb_name" {
-  description = "Name of the Load Balancer"
-  type        = string
-  default = "test-lb"
-}
-
-variable "internal" {
-  description = "Whether the Load Balancer is internal"
-  default       = false
-}
-
-variable "load_balancer_type" {
-  description = "Type of Load Balancer (application or network)"
-  type        = string
-  default = "application"
-}
-
-variable "lb_sg_id" {
-  description = "Security Group ID for the Load Balancer"
-  type        = string
-  default = "sg-0a135faf51266e478"
-}
-
-variable "public_subnet_ids" {
-  description = "List of public subnet IDs"
-  type        = list(string)
-  default = [ "subnet-0ead9c4502a8360e8", "subnet-04150d17889a797a4"  ]
-}
-
-variable "enable_deletion_protection" {
-  description = "Enable or disable deletion protection"
-  type        = bool
-  default = true
-}
-
-variable "environment_tag" {
-  description = "Environment tag for resources"
-  type        = string
-  default = "production"
-}
-
-variable "eb_app_name" {
-  description = "Name of the Elastic Beanstalk application"
-  type        = string
-  default = "my-eb"
-}
-variable "eb_app_description" {
-  default = "My sample Elastic Beanstalk app"
-}
-
-
-variable "eb_service_role_arn" {
-  description = "ARN of the IAM service role for Elastic Beanstalk"
-  type        = string
-  default = "arn:aws:iam::501619570787:role/ElasticBeanstalkservice"
 }
 
 variable "db_identifier" {
