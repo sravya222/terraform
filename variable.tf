@@ -1,7 +1,7 @@
 # AWS Region
 variable "region" {
   type    = string
-  default = "eu-central-1a"
+  default = "ap-south-1"
 }
 
 variable "tags" {
@@ -27,7 +27,7 @@ variable "vpc_cidr" {
 variable "availability_zones" {
   description = "List of availability zones"
   type        = list(string)
-  default = ["eu-central-1a", "eu-central-1b"]
+  default = ["ap-south-1", "ap-south-2"]
 }
 
 variable "public_subnets" {
