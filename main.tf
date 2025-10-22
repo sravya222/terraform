@@ -74,31 +74,6 @@ resource "aws_s3_bucket" "example" {
   }
 }
 
-resource "aws_lb" "test" {
-  name               = var.lb_name
-  internal           = var.internal
-  load_balancer_type = var.load_balancer_type
-  security_groups    = [var.lb_sg_id]
-  subnets            = var.public_subnet_ids
-
-  enable_deletion_protection = var.enable_deletion_protection
-
-   tags = {
-    Environment = var.environment_tag
-  }
-}
-
-resource "aws_elastic_beanstalk_application" "this" {
-  name        = var.eb_app_name
-  description = var.eb_app_description
-
- 
-  appversion_lifecycle {
-    service_role          = var.eb_service_role_arn
-        
-  }
-}
-
 resource "aws_db_instance" "postgres" {
   identifier              = var.db_identifier
   engine                  = "postgres"
